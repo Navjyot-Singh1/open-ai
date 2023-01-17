@@ -84,7 +84,7 @@ const handleSubmit = async (e) => {
   // messageDiv.innerHTML = "..."
   loader(messageDiv);
 
-  const response = await fetch("https://openaigptintegration.onrender.com/", {
+  const response = await fetch("https://openaigptintegration.onrender.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -112,7 +112,7 @@ const handleSubmit = async (e) => {
 
 form.addEventListener("submit", handleSubmit);
 form.addEventListener("keyup", (e) => {
-  if (e.key === "Enter") {
+  if (e.keyCode === 13) {
     handleSubmit(e);
   }
 });
